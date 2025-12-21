@@ -96,13 +96,14 @@ const Navbar = () => {
             </a>
           ))}
 
-          <a
-            href="#contact"
-            onClick={closeMenu}
-            className="mt-8 px-8 py-3 bg-primary text-primary-foreground rounded-full text-lg font-medium hover:bg-primary/90 transition-all"
-          >
-            Let’s talk
-          </a>
+         <a
+          href="https://drive.google.com/file/d/11Yyshj7D_2gTydaw-SW7-SNYUJElDvUY/view"
+          target="_blank"
+          className="hidden md:inline-flex items-center gap-2 px-6 py-2.5 bg-primary text-primary-foreground rounded-full text-sm font-medium hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/25"
+        >
+          <i className="bi bi-file-earmark-person" />
+          Hire me
+        </a>
         </div>
       </div>
     </header>
