@@ -1,0 +1,38 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+ ../../../../Searches/
+        ../../../../Videos/
+        ../../../../VirtualBox VMs/
+        ../../../../d4ac4633ebd6440fa397b84f1bc94a3c.7z
+        ../../../../inittk.ini
+        ../../../../inst.ini
+        ../../../../ntuser.dat.LOG1
+        ../../../../ntuser.dat.LOG2
+        ../../../../ntuser.ini
+        ../../../../nuuid.ini
+        ../../../../pseint/
+        ../../../../source/
+        ../../../../useruid.ini
+        ../../../../vmlogs/
