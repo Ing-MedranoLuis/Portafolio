@@ -2,7 +2,7 @@ import React from 'react'
 
 export const useData = () => {
 
-    const images: string[] = [`src/Screenshot 2025-12-21 094723.png`, '/src/Screenshot 2025-12-21 095326.png', 'src/Screenshot 2025-12-21 095517.png', 'src/WhatsApp Image 2025-12-21 at 10.39.40 AM.jpeg'];
+    const images: string[] = [`dist/img/Screenshot 2025-12-21 094723.png`, 'dist/img/Screenshot 2025-12-21 095326.png', 'dist/img/Screenshot 2025-12-21 095517.png', 'dist/img/WhatsApp Image 2025-12-21 at 10.39.40 AM.jpeg'];
     const projectsTitles: string[] = ['Task List', 'Gift Search', 'Movies Search', 'Sport Platform']
     const skills: string[] = ["React", "TypeScript", "UI/UX Design", "Animation", 'C#', 'Database', 'Tailwind', 'Git', 'Azure']
     const gitHubLinks: string[] = ["", "", "https://github.com/Ing-MedranoLuis/MoviesAPI", 'https://github.com/Ing-MedranoLuis/Sportplatform']
