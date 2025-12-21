@@ -33,9 +33,12 @@ export const Mailmme=({ onSubmit, handleUser, user }:Card )=> {
 
 
   return (
-    <Card className="w-full max-w-sm">
+    <Card className="w-full max-w-sm border border-primary">
       <CardHeader>
-        <CardTitle>Report bugs</CardTitle>
+        <CardTitle>
+          <p className="text-primary text-sm uppercase tracking-[0.3em] mb-4">
+                  Get in Touch
+          </p></CardTitle>
         <CardDescription>
           Enter your information down there
         </CardDescription>
@@ -45,7 +48,7 @@ export const Mailmme=({ onSubmit, handleUser, user }:Card )=> {
         <form onSubmit={(e)=>onSubmit(e)}>
           <div className="flex flex-col gap-6">
             <div className="grid gap-2">
-              <Label htmlFor="email">Username</Label>
+              
               <Input
                               id="username"
                               name="username"
@@ -57,14 +60,9 @@ export const Mailmme=({ onSubmit, handleUser, user }:Card )=> {
               />
             </div>
             <div className="grid gap-2">
-              <div className="flex items-center">
+              <div className="flex justify-center">
                 <Label htmlFor="password">Comment</Label>
-                <a
-                  href="#"
-                  className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                >
-                  Forgot your password?
-                </a>
+              
               </div>
                           <textarea
                               className="border bg-black rounded p-2"
@@ -81,7 +79,8 @@ export const Mailmme=({ onSubmit, handleUser, user }:Card )=> {
        
            <Button type="submit" onKeyDown={(e)=>handleKey(e)}  className="cursor-pointer w-full bg-black text-white">
           Send
-        </Button>
+            </Button>
+            <p className="text-sm text-gray-400">or Email me at ing.luismedrano0723@gmail.com</p>
       </CardFooter>
              
         </form>

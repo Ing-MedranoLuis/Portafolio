@@ -13,14 +13,11 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menu when clicking outside or on a link
   const closeMenu = () => setIsOpen(false);
 
   return (
@@ -35,84 +32,76 @@ const Navbar = () => {
         {/* Logo */}
         <a
           href="#home"
-          className="font-display text-2xl font-body  tracking-tight text-foreground hover:text-primary transition-colors duration-300"
+          className="text-2xl font-semibold tracking-tight text-foreground hover:text-primary transition-colors"
         >
           Ing Medrano
         </a>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a href={link.href} className="font-poppins nav-link text-sm uppercase tracking-widest font-medium">
+              <a
+                href={link.href}
+                className="text-sm uppercase tracking-widest font-medium text-foreground hover:text-primary transition"
+              >
                 {link.name}
               </a>
             </li>
           ))}
         </ul>
 
-        {/* CTA Button - Desktop */}
+        {/* Desktop CTA */}
         <a
-    href="https://drive.google.com/file/d/11Yyshj7D_2gTydaw-SW7-SNYUJElDvUY/view?usp=drive_link"
-          className=" cursor-pointer hidden animate-pulse md:inline-flex px-6 py-2.5 bg-primary text-primary-foreground rounded-full text-sm font-medium hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
+          href="https://drive.google.com/file/d/11Yyshj7D_2gTydaw-SW7-SNYUJElDvUY/view"
+          target="_blank"
+          className="hidden md:inline-flex items-center gap-2 px-6 py-2.5 bg-primary text-primary-foreground rounded-full text-sm font-medium hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/25"
         >
-          <i className="bi bi-file-earmark-person"></i>
-         Hire me 
+          <i className="bi bi-file-earmark-person" />
+          Hire me
         </a>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex md:hidden relative z-50 p-2 text-foreground hover:text-primary transition-colors duration-300"
-          aria-label="Toggle menu"
+          className="md:hidden p-2 z-[60] text-foreground hover:text-primary transition"
+          aria-label="Toggle Menu"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Overlay */}
       <div
-        className={`fixed inset-0 bg-background/98 backdrop-blur-xl md:hidden transition-all duration-500 ${
+        className={`fixed inset-0 z-[999] bg-background/95 backdrop-blur-xl md:hidden transition-all duration-500 ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
         onClick={closeMenu}
       >
         <div
-          className={`flex flex-col items-center justify-center h-full transition-all duration-500 ${
-            isOpen ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"
+          className={`h-full flex flex-col items-center justify-center gap-10 transition-all duration-500 ${
+            isOpen ? "translate-y-0 opacity-100" : "-translate-y-6 opacity-0"
           }`}
           onClick={(e) => e.stopPropagation()}
         >
-          <ul className="flex flex-col items-center gap-8">
-            {navLinks.map((link, index) => (
-              <li
-                key={link.name}
-                className="overflow-hidden"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <a
-                  href={link.href}
-                  onClick={closeMenu}
-                  className={`font-display font-changa text-4xl font-medium text-foreground hover:text-primary transition-all duration-300 block ${
-                    isOpen ? "animate-slide-up" : ""
-                  }`}
-                  style={{ animationDelay: `${index * 100 + 200}ms` }}
-                >
-                  {link.name}
-                </a>
-              </li>
-            ))}
-          </ul>
+          {navLinks.map((link, index) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={closeMenu}
+              className="text-4xl font-medium text-foreground hover:text-primary transition-all"
+              style={{ transitionDelay: `${index * 80}ms` }}
+            >
+              {link.name}
+            </a>
+          ))}
 
           <a
             href="#contact"
             onClick={closeMenu}
-            className={`mt-12 px-8 py-3 bg-primary text-primary-foreground rounded-full text-lg font-medium hover:bg-primary/90 transition-all duration-300 ${
-              isOpen ? "animate-slide-up" : ""
-            }`}
-            style={{ animationDelay: "600ms" }}
+            className="mt-8 px-8 py-3 bg-primary text-primary-foreground rounded-full text-lg font-medium hover:bg-primary/90 transition-all"
           >
-            Let's Talk
+            Let’s talk
           </a>
         </div>
       </div>

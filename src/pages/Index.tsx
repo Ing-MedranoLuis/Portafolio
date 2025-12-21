@@ -11,7 +11,7 @@ import { useData } from "@/hooks/useData";
 
 const Index = () => {
   const { onSubmit, user, handleUser, allUser } = UsePost();
-  const { images,projectsTitles,skills,gitHubLinks,viewLinks} = useData();
+  const { images,projectsTitles,skills,gitHubLinks,viewLinks,socialMedias,detailsProjects} = useData();
   return (
     <>
    <Helmet>
@@ -37,13 +37,13 @@ const Index = () => {
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.1}>
-                <h2 className="font-body text-4xl md:text-5xl lg:text-6xl font-medium mb-8">
+                <h2 className="font-body text-xs md:text-5xl lg:text-6xl font-medium mb-8">
                   Passionate about creating{" "}
                   <span className="text-gradient">meaningful</span> experiences
                 </h2>
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
-                <p className=" text-muted-foreground text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+                <p className=" text-muted-foreground text-xs md:text-xl leading-relaxed max-w-2xl mx-auto">
                   A passionate developer and designer focused on creating impactful digital experiences.
                   With expertise in modern web technologies, I bring ideas to life through clean code
                   and stunning visuals.
@@ -71,7 +71,7 @@ const Index = () => {
                   </p>
                 </ScrollReveal>
                 <ScrollReveal delay={0.1}>
-                  <h2 className="font-display font-body text-4xl md:text-5xl lg:text-6xl font-medium">
+                  <h2 className="font-display font-body text-xs md:text-5xl lg:text-6xl font-medium">
                     Selected <span className="text-gradient font-body">Projects</span>
                   </h2>
                 </ScrollReveal>
@@ -85,24 +85,24 @@ const Index = () => {
                     delay={0.2 + index * 0.1}
                     direction={index % 2 === 0 ? "left" : "right"}
                   >
-                    <motion.div
+                    <motion.div 
                       whileHover={{ y: -10 }}
                       transition={{ duration: 0.3 }}
-                      className="group relative overflow-hidden rounded-2xl bg-background border border-border hover:border-primary/50 transition-all duration-500"
+                      className=" group relative overflow-hidden rounded-2xl bg-background border border-border hover:border-primary/50 transition-all duration-500"
                     >
-                      <div className="aspect-video bg-muted flex items-center justify-center">
+                      <div className="  bg-muted flex items-center justify-center">
                         <img src={`${project}`} alt="" />
                       </div>
                       <div className="p-6">
-                        <h3 className="font-body font-display text-xl font-medium mb-2 group-hover:text-primary transition-colors duration-300">
+                        <h3 className="font-body font-display md:text-xl text-xs font-medium mb-2 group-hover:text-primary transition-colors duration-300">
                            {projectsTitles[index]}
                         </h3>
-                        <p className="text-muted-foreground text-sm">
-                          A brief description of this amazing project and the technologies used.
+                        <p className="text-muted-foreground text-xs md:text-sm">
+                          {detailsProjects[index]}
                         </p>
                         <div className="pt-10">
-                          <a className="hover:bg-primary  hover:text-white border rounded mx-2  px-2 py-3 text-white transition" href={`${viewLinks[index]}`}><i className="bi bi-eye px-2"></i>View</a>
-                            <a className="hover:bg-primary hover:text-white border rounded mx-2  px-2 py-3 text-white transition" href={`${gitHubLinks[index]}`}><i className="bi bi-github px-2"></i>Git hub</a>
+                          <a className="hover:bg-primary  hover:text-white border rounded mx-1 text-xs  px-1 py-2   md:px-2 md:py-3 text-white transition" href={`${viewLinks[index]}`}><i className="bi bi-eye px-1"></i>View</a>
+                            <a className="hover:bg-primary hover:text-white border rounded mx-1 px-1 py-2 text-xs  md:px-2 md:py-3 text-white transition" href={`${gitHubLinks[index]}`}><i className="bi bi-github px-1"></i>Git hub</a>
                          
                           
                         </div>
@@ -131,13 +131,13 @@ const Index = () => {
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.1}>
-                <h2 className="font-display font-body text-4xl md:text-5xl lg:text-6xl font-medium mb-8">
+                <h2 className="font-display font-body text-xs md:text-5xl lg:text-6xl font-medium mb-8">
                   Let's create something{" "}
                   <span className="text-gradient">amazing</span> together
                 </h2>
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
-                <p className="font-body text-muted-foreground text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-12">
+                <p className="font-body text-muted-foreground text-xs md:text-xl leading-relaxed max-w-2xl mx-auto mb-12">
                   Have a project in mind? I'd love to hear about it. Drop me a message
                   and let's discuss how we can bring your vision to life.
                 </p>
@@ -147,17 +147,17 @@ const Index = () => {
                   href="mailto:hello@example.com"
                   whileHover={{ scale: 1.05, y: -3 }}
                   whileTap={{ scale: 0.98 }}
-                  className="font-body inline-flex px-10 py-5 bg-primary text-primary-foreground rounded-full text-lg font-medium transition-shadow duration-300 hover:shadow-xl hover:shadow-primary/30"
+                  className="font-body inline-flex px-5 py-3 md:px-10 md:py-5 bg-primary text-primary-foreground rounded-full text-xs md:text-lg font-medium transition-shadow duration-300 hover:shadow-xl hover:shadow-primary/30"
                 >
                   Say Hello
                 </motion.a>
               </ScrollReveal>
                <ScrollReveal delay={0.3}>
-                <div className=" md:pt-20  md:flex-row  flex-col md:flex">
+                <div className=" md:pt-20  mt-10 md:justify-center  md:flex-row flex flex-col items-center md:flex">
                   <div className="md:w-1/2 w-2/2 ">
                     <Mailmme onSubmit={onSubmit} handleUser={handleUser}user={user}/>
                   </div>
-                  <div className="md:w-1/2 w-2/2">
+                  <div className="md:w-1/2 w-2/2 pt-10 md:pt-0 ">
                     <MailmeCarousel user={allUser}/>
                   </div>
                </div>
@@ -166,10 +166,10 @@ const Index = () => {
               {/* Social Links */}
               <ScrollReveal delay={0.4}>
                 <div className="flex items-center justify-center gap-8 mt-16">
-                  {[ "LinkedIn", "GitHub", "Gmail"].map((social) => (
+                  {[ "LinkedIn", "GitHub", "Gmail"].map((social,index) => (
                     <motion.a
-                      key={social}
-                      href="#"
+                      key={index}
+                      href={`${socialMedias[index]}`}
                       whileHover={{ y: -3 }}
                       className="text-muted-foreground hover:text-foreground transition-colors duration-300 text-sm uppercase tracking-wider"
                     >
@@ -185,7 +185,7 @@ const Index = () => {
           <footer className="py-8 border-t border-border">
             <div className="container text-center">
               <p className="text-muted-foreground text-sm">
-                © 2024 Portfolio. All rights reserved.
+                © 2025 Ing Luis Medrano. All rights reserved.
               </p>
             </div>
           </footer>

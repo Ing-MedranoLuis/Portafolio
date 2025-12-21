@@ -27,16 +27,20 @@ export function MailmeCarousel({user}:Props) {
     >
       <CarouselContent className=" h-[350px]">
         {user.map((name, index) => (
-          <CarouselItem key={index} className=" md:basis-1/2">
+          <CarouselItem key={index} className="basis-1/4 md:basis-1/4">
             <div className="">
-              <Card>
-                <CardContent className="flex  items-center justify-center p-1">
-                  <img className="rounded-2xl w-10 h-10 " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF02Jj8T2t7PdkytAw42HDuuSz7yXguKn8Lg&s" alt="" />
-                  <div className="flex flex-col items-center p-2">
+              <Card className=" bg-blacks border-none ">
+                <CardContent className="flex  items-center justify-start">
+                 
+                  <div className="flex flex-col justify-start  ">
+                     <h1 className="text-primary text-[7px] font-body">@{ name.username.toUpperCase()}</h1>
                     
-                    <span className="text-sm font-bold ">@{name.username}</span>
-                    <span className="text-sm ">"{name.comment}"</span>
-                  </div>
+                      <div className="flex items-center  ">
+                       
+                       <img className="rounded-2xl mx-2 w-5 h-5 border border-2 border-primary " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF02Jj8T2t7PdkytAw42HDuuSz7yXguKn8Lg&s" alt="" />
+                      <span className="text-sm border bg-primary h-auto py-2 px-10 rounded-xl  font-body">{name.comment}</span>
+                      </div>
+                </div>
                   
                 </CardContent>
               </Card>
